@@ -17,7 +17,7 @@ async function getFullReport(lat, lon, unit, name) {
 async function fetchAPI(city, unit) {
   try {
     const response = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=439d3065b45670e79420d63e6aa69939`,
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=439d3065b45670e79420d63e6aa69939`,
       { mode: 'cors' }
     );
     if (response.ok) {
