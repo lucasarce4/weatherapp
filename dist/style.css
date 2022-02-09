@@ -1,0 +1,330 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  background-size: cover;
+  font-family: 'Baloo Bhaijaan 2', cursive;
+  line-height: 140%;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  visibility: visible;
+}
+
+.container.loading {
+  visibility: hidden;
+}
+
+.background {
+  position: absolute;
+}
+
+.main {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.city {
+  grid-column: 2/4;
+  grid-row: 1/4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: -200px;
+}
+
+#city-name {
+  font-size: clamp(4rem, 10vw, 7rem);
+  color: #ffffff;
+  text-shadow: 2px 2px 2px #000000;
+}
+
+.main-info,
+.secondary-info {
+  grid-column: 1/2;
+  grid-row: 1/3;
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  text-shadow: 2px 2px 2px #000000;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(1rem, 3vw, 2rem);
+}
+
+.main-info-container,
+.secondary-info-container {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 210px;
+}
+
+.secondary-info {
+  grid-column: 4/5;
+}
+
+#description,
+#mainIcon {
+  font-size: clamp(1rem, 6vw, 3.8rem);
+}
+
+#currentTemp {
+  font-size: clamp(2rem, 2vw, 3.2rem);
+}
+
+#feelsLike,
+#humidity,
+#windSpeed,
+#chanceOfRain {
+  padding-left: 15px;
+  font-size: clamp(1.1rem, 3vw, 2.5rem);
+}
+
+#city-search {
+  border: none;
+  width: 300px;
+  background: rgba(255, 254, 254, 0.075);
+  color: #ffffff;
+  font-size: 1.4rem;
+  border-bottom: 3px solid #ffffff;
+  backdrop-filter: blur(2px);
+  text-shadow: 2px 2px 2px #000000;
+}
+
+#city-search:focus {
+  border: none;
+  outline: none;
+}
+.search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#city-search::placeholder {
+  color: #ffffff;
+  text-shadow: 2px 2px 2px #000000;
+}
+#search-button {
+  background: none;
+  border: none;
+}
+#search-button i {
+  font-size: 1.3rem;
+  color: white;
+  text-shadow: 2px 2px 2px #000000;
+}
+
+.error {
+  visibility: hidden;
+}
+
+.error.show {
+  visibility: visible;
+}
+.weekContainer,
+.hoursContainer {
+  grid-row: 4/5;
+  grid-column: 1/5;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 10px;
+  visibility: hidden;
+}
+
+.weekContainer.show,
+.hoursContainer.show {
+  visibility: visible;
+}
+
+.dayContainer,
+.hourContainer {
+  height: 100%;
+  width: 13%;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(0.5rem, 5vw, 2rem);
+  gap: 5px;
+  background: rgba(255, 254, 254, 0.1);
+  backdrop-filter: blur(4px);
+  border-radius: 15px;
+  text-shadow: 2px 2px 2px #000000;
+}
+
+.tempSwitchContainer {
+  display: flex;
+  gap: 6px;
+}
+
+.tempText {
+  font-size: 1.4rem;
+  color: #ffffff;
+  text-shadow: 2px 2px 2px #000000;
+}
+
+.temperatureSwitch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+/* Hide default HTML checkbox */
+.temperatureSwitch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(49, 207, 35);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.dailyHourlySwitch {
+  align-self: flex-end;
+  justify-self: center;
+  display: flex;
+  gap: 35px;
+  padding-bottom: 20px;
+  padding-left: -30px;
+}
+
+.yellow-icon {
+  color: yellow;
+}
+
+.grey-icon {
+  color: gray;
+}
+
+.tempSwitchButton {
+  background: none;
+  outline: none;
+  border: none;
+  color: #ffffff;
+  text-shadow: 2px 2px 2px #000000;
+  font-size: 1.8rem;
+  padding: 5px;
+}
+
+.tempSwitchButton:hover,
+.tempSwitchButton:focus {
+  background-color: rgba(255, 254, 254, 0.335);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dayName {
+  font-size: clamp(1.3rem, 5vw, 2.5rem);
+}
+
+.hour,
+.temp {
+  font-size: 2.8rem;
+}
+
+@media (max-width: 1300px) {
+  .main {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4 1fr);
+  }
+  .weekContainer,
+  .hoursContainer {
+    flex-direction: column;
+    width: 90vw;
+    height: 40vh;
+  }
+
+  .city {
+    grid-column: 1/3;
+    width: 100vw;
+  }
+
+  .main-info,
+  .secondary-info {
+    grid-column: 1/2;
+    grid-row: 2/4;
+    width: 150px;
+    align-self: center;
+    justify-self: center;
+    margin-bottom: -40px;
+  }
+
+  .main-info-container,
+  .secondary-info-container {
+    width: 40vw;
+  }
+  .secondary-info {
+    grid-column: 2/3;
+  }
+  .dailyHourlySwitch {
+    grid-row: 2/4;
+    grid-column: 1/3;
+    align-self: flex-end;
+    padding-bottom: 5px;
+  }
+  .dayContainer,
+  .hourContainer {
+    flex-direction: row;
+    height: 10%;
+    width: auto;
+  }
+  .dayName {
+    justify-self: left;
+  }
+}
