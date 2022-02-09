@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/c9af9cd2d4.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <main class="main">
+        <div class="city">
+          <h1 id="city-name"></h1>
+          <div class="search">
+            <div class="search-bar">
+              <input
+                type="text"
+                id="city-search"
+                placeholder="Search city..."
+              />
+              <button id="search-button">
+                <i class="fas fa-search"></i>
+              </button>
+              <div class="error">City not found</div>
+            </div>
+            <div class="tempSwitchContainer">
+              <span class="tempText">°C</span>
+              <label class="temperatureSwitch">
+                <input type="checkbox" id="tempSwitch" /><span
+                  class="slider round"
+                ></span>
+              </label>
+              <span class="tempText">°F</span>
+            </div>
+          </div>
+        </div>
+        <div class="main-info">
+          <div class="main-info-container">
+            <span id="description"></span>
+            <div class="dayAndDateContainer">
+              <span id="dayName"></span>,<span id="dayAndMonth"></span>
+            </div>
+            <span id="time"></span><span id="currentTemp"></span>
+            <div id="mainIcon"></div>
+          </div>
+        </div>
+        <div class="secondary-info">
+          <div class="secondary-info-container">
+            <div class="currentFeel">
+              <span><small> Feels like</small></span>
+              <span id="feelsLike"></span>
+            </div>
+            <div class="humidityInfo">
+              <span><small> Humidity</small></span>
+              <span id="humidity"></span>
+            </div>
+            <div class="windInfo">
+              <span><small>Wind speed</small></span>
+              <span id="windSpeed"></span>
+            </div>
+            <div class="rain">
+              <span><small> Chance of rain</small></span>
+              <span id="chanceOfRain"></span>
+            </div>
+          </div>
+        </div>
+        <template id="daysTemplate">
+          <div class="dayName"></div>
+          <div class="icon"></div>
+          <div class="min-temp"></div>
+          <div class="max-temp"></div>
+          <div class="icon"></div>
+        </template>
+        <div class="dailyHourlySwitch">
+          <button class="tempSwitchButton" id="dailyButton">Daily</button
+          ><button class="tempSwitchButton" id="hourlyButton">Hourly</button>
+        </div>
+        <div class="weekContainer show">
+          <div class="dayContainer"></div>
+          <div class="dayContainer"></div>
+          <div class="dayContainer"></div>
+          <div class="dayContainer"></div>
+          <div class="dayContainer"></div>
+          <div class="dayContainer"></div>
+          <div class="dayContainer"></div>
+        </div>
+        <template id="hoursTemplate">
+          <div class="hour"></div>
+          <div class="icon"></div>
+          <div class="temp"></div>
+          <div class="feels_like"></div>
+        </template>
+        <div class="hoursContainer">
+          <div class="hourContainer"></div>
+          <div class="hourContainer"></div>
+          <div class="hourContainer"></div>
+          <div class="hourContainer"></div>
+          <div class="hourContainer"></div>
+          <div class="hourContainer"></div>
+          <div class="hourContainer"></div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
