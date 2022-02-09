@@ -7,7 +7,6 @@ async function getFullReport(lat, lon, unit, name) {
       { mode: 'cors' }
     );
     const fullInfo = await response.json();
-    console.log(fullInfo);
     weatherUpdate(fullInfo, unit, name);
   } catch (err) {
     console.log(err);
@@ -29,7 +28,6 @@ async function fetchAPI(city, unit) {
         unit,
         weatherInfo.name
       );
-      console.log(weatherInfo);
     } else {
       document.querySelector('.error').classList.add('show');
     }
